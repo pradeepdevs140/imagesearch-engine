@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelFinder - Advanced Image Search</title>
+    <meta name="description" content="Search millions of high-quality free images">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-camera"></i>
+                <h1 style ="font-size: 25px;">image Search Engine</h1>
+            </div>
+            <div class="search-container">
+                <form id="search-form">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="search-input" placeholder="Search for images..." autocomplete="off">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </form>
+            </div>
+            <nav class="header-nav">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-options">
+                    <select id="orientation-filter">
+                        <option value="">All Orientations</option>
+                        <option value="landscape">Landscape</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="square">Square</option>
+                    </select>
+                    <select id="size-filter">
+                        <option value="">All Sizes</option>
+                        <option value="large">Large</option>
+                        <option value="medium">Medium</option>
+                        <option value="small">Small</option>
+                    </select>
+                    <select id="color-filter">
+                        <option value="">All Colors</option>
+                        <option value="red">Red</option>
+                        <option value="orange">Orange</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="purple">Purple</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                    </select>
+                </div>
+                <button id="apply-filters" class="btn">Apply Filters</button>
+            </div>
+
+            <div class="results-info" id="results-info"></div>
+
+            <div class="image-grid" id="image-grid">
+                <!-- Images will be loaded here -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be loaded here -->
+            </div>
+
+            <div class="loading-spinner" id="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading images...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox" id="close-lightbox">&times;</span>
+            <img src="" alt="" id="lightbox-image">
+            <div class="lightbox-details">
+                <div class="image-info">
+                    <p id="image-photographer"></p>
+                    <p id="image-resolution"></p>
+                </div>
+                <div class="lightbox-actions">
+                    <a href="" id="download-link" class="btn" download target="_blank">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <a href="" id="original-link" class="btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Original
+                    </a>
+                </div>
+            </div>
+            <button class="lightbox-nav prev" id="prev-image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav next" id="next-image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 PixelFinder. Powered by the Pexels API.</p>
+            <p>Created with ❤️ for developers</p>
+        </div>
+    </footer>
+
+    <script src="scripts/lightbox.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
